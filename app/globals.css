@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --kitak-green: #1b4d2e;
+  --kitak-lime: #a8d400;
+  --kitak-gold: #ffd700;
+  --kitak-dark: #0d1f0f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0d1f0f;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+/* ── Typography ── */
+.font-bebas {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.04em;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #a8d400 0%, #ffd700 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Glass surfaces ── */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-green {
+  background: rgba(27, 77, 46, 0.35);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(168, 212, 0, 0.15);
+}
+
+/* ── Glows ── */
+.lime-glow {
+  box-shadow: 0 0 32px rgba(168, 212, 0, 0.35);
+}
+
+.gold-glow {
+  box-shadow: 0 0 32px rgba(255, 215, 0, 0.4);
+}
+
+/* ── Countdown pulse ── */
+@keyframes countdownPulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.04); }
+}
+
+.countdown-pulse {
+  display: inline-block;
+  animation: countdownPulse 1s ease-in-out infinite;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar        { width: 5px; }
+::-webkit-scrollbar-track  { background: #0d1f0f; }
+::-webkit-scrollbar-thumb  { background: #a8d400; border-radius: 3px; }
+
+/* ── Form primitives ── */
+@layer components {
+  .form-input {
+    @apply w-full rounded-xl px-4 py-3 text-white placeholder-white/30
+           focus:outline-none transition-all duration-200;
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .form-input:focus {
+    border-color: rgba(168, 212, 0, 0.5);
+    background: rgba(0, 0, 0, 0.45);
+  }
+  .form-label {
+    @apply block text-xs font-semibold uppercase tracking-widest mb-1.5;
+    color: rgba(255, 255, 255, 0.5);
+  }
+}
