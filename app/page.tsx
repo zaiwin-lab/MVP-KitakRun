@@ -2,6 +2,9 @@ import HeroSection from '@/components/HeroSection'
 import EventInfo from '@/components/EventInfo'
 import PrizesSection from '@/components/PrizesSection'
 import SocialSection from '@/components/SocialSection'
+import Footer from '@/components/Footer'
+import WhatsAppButton from '@/components/WhatsAppButton'
+import SiteHeader from '@/components/SiteHeader'
 
 export default function Home() {
   return (
@@ -42,10 +45,13 @@ export default function Home() {
         <input type="file"  name="team-logo" />
       </form>
 
+      <SiteHeader />
       <HeroSection />
       <EventInfo />
       <PrizesSection />
       <SocialSection />
+      <Footer />
+      <WhatsAppButton />
     </main>
   )
 }

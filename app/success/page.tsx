@@ -3,6 +3,8 @@
 import { Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
+import WhatsAppButton from '@/components/WhatsAppButton'
+import SiteHeader from '@/components/SiteHeader'
 
 function SuccessContent() {
   const params   = useSearchParams()
@@ -11,7 +13,9 @@ function SuccessContent() {
   const shareText = `🏃 Just registered for #RunKitakRun with team ${teamName}! See you at Sarawak Botanical Garden on 18 July 2026! 💪 #INSPIREiCATSUC #RunTogether`
 
   return (
-    <main className="min-h-screen bg-kitak-dark flex items-center justify-center px-4 py-16">
+    <main className="min-h-screen bg-kitak-dark flex flex-col">
+      <SiteHeader />
+      <div className="flex-1 flex items-center justify-center px-4 py-16">
       <div className="max-w-lg w-full text-center">
         {/* Animated badge */}
         <div className="relative w-28 h-28 mx-auto mb-8">
@@ -65,8 +69,9 @@ function SuccessContent() {
         </div>
 
         <p className="text-white/20 text-xs mt-10">
-          Run Kitak Run! · i-CATS UC · INSPIRE Programme · One University, One Community, One Pride
+          Run Kitak Run! · i-CATS UC · INSPIRE Programme · Inspiring Minds, Shaping Future
         </p>
+      </div>
       </div>
     </main>
   )
@@ -82,6 +87,7 @@ export default function SuccessPage() {
       }
     >
       <SuccessContent />
+      <WhatsAppButton />
     </Suspense>
   )
 }

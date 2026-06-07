@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import { LanguageProvider } from '@/lib/i18n'
 
 export const metadata: Metadata = {
   title: 'Run Kitak Run! | i-CATS UC Staff Challenge 2026',
@@ -17,7 +18,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="bg-kitak-dark text-white antialiased">{children}</body>
+      <body className="bg-kitak-dark text-white antialiased">
+        <LanguageProvider>{children}</LanguageProvider>
+      </body>
     </html>
   )
 }
