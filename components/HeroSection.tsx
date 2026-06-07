@@ -71,8 +71,8 @@ export default function HeroSection() {
               style={{
                 left: `${(i * 37) % 100}%`,
                 top: `${(i * 53) % 100}%`,
-                animationDelay: `${(i * 1.7) % 12}s`,
-                animationDuration: `${10 + (i % 5) * 2}s`,
+                animationDelay: `${(i * 0.9) % 6}s`,
+                animationDuration: `${4 + (i % 5)}s`,
               }}
             />
           ))}

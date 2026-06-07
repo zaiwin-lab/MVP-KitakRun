@@ -17,7 +17,7 @@ export default function SocialSection() {
     <section
       id="social"
       className="relative overflow-hidden py-24 px-4"
-      style={{ background: 'linear-gradient(180deg, #0D1F0F 0%, #050C06 100%)' }}
+      style={{ background: 'linear-gradient(180deg, #0D1F0F 0%, #1B4D2E 100%)' }}
     >
       {/* Premium signature: occasional tiny leaf drift — very subtle, motion-safe */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden>
