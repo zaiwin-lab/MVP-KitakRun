@@ -20,6 +20,12 @@ export default function SiteHeader() {
         <div className="flex items-center gap-2 sm:gap-4">
           <LanguageSwitcher />
           <Link
+            href="/admin"
+            className="hidden sm:inline-block bg-kitak-green/40 text-white/45 hover:text-white/70 font-semibold text-xs px-3.5 py-1.5 rounded-full border border-white/5 transition-colors duration-200"
+          >
+            {t.nav.admin}
+          </Link>
+          <Link
             href="/register"
             className="hidden sm:inline-block bg-kitak-lime text-kitak-dark font-bold text-sm px-4 py-1.5 rounded-full hover:scale-105 transition-transform duration-200"
           >
