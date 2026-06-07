@@ -74,6 +74,98 @@ body {
   animation: countdownPulse 1s ease-in-out infinite;
 }
 
+/* ── Premium signature experience ──
+   Subtle, low-opacity, slow-moving accents. Disabled entirely when the
+   visitor prefers reduced motion. */
+
+/* A. Tiny golden sparkles — hero section only */
+.hero-sparkles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hero-sparkle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 9999px;
+  background: var(--kitak-gold);
+  opacity: 0;
+  animation-name: sparkleDrift;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes sparkleDrift {
+  0%   { opacity: 0;    transform: translate(0, 0) scale(0.6); }
+  15%  { opacity: 0.35; }
+  50%  { opacity: 0.55; transform: translate(14px, -22px) scale(1); }
+  85%  { opacity: 0.2; }
+  100% { opacity: 0;    transform: translate(-10px, -40px) scale(0.6); }
+}
+
+/* B. Subtle button shimmer — sweeps across CTAs roughly every 24s */
+.btn-shimmer {
+  position: relative;
+}
+
+.btn-shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    115deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 60%
+  );
+  background-size: 250% 100%;
+  background-position: 200% 0;
+  animation: btnShimmerSweep 24s ease-in-out infinite;
+}
+
+@keyframes btnShimmerSweep {
+  0%, 92%   { background-position: 200% 0; }
+  97%       { background-position: -40% 0; }
+  100%      { background-position: -40% 0; }
+}
+
+/* C. Botanical touch — occasional tiny leaf drift in selected sections */
+.leaf-drift {
+  position: absolute;
+  font-size: 14px;
+  opacity: 0;
+  animation-name: leafDrift;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  pointer-events: none;
+  filter: grayscale(0.2) brightness(0.9);
+}
+
+@keyframes leafDrift {
+  0%   { opacity: 0;    transform: translate(0, -10px) rotate(0deg); }
+  10%  { opacity: 0.12; }
+  50%  { opacity: 0.16; transform: translate(-26px, 60px) rotate(140deg); }
+  90%  { opacity: 0.06; }
+  100% { opacity: 0;    transform: translate(-46px, 130px) rotate(260deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-sparkle,
+  .btn-shimmer::after,
+  .leaf-drift,
+  .countdown-pulse {
+    animation: none !important;
+  }
+  .hero-sparkle,
+  .leaf-drift,
+  .btn-shimmer::after {
+    display: none !important;
+  }
+}
+
 /* ── Scrollbar ── */
 ::-webkit-scrollbar        { width: 5px; }
 ::-webkit-scrollbar-track  { background: #0d1f0f; }

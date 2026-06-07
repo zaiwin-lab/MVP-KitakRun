@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { useLanguage } from '@/lib/i18n'
 
 interface TimeLeft {
   days: number
@@ -22,6 +23,7 @@ function calc(): TimeLeft {
 }
 
 export default function CountdownTimer() {
+  const { t } = useLanguage()
   const [time, setTime]       = useState<TimeLeft>(calc)
   const [mounted, setMounted] = useState(false)
 
@@ -34,10 +36,10 @@ export default function CountdownTimer() {
   if (!mounted) return null
 
   const units = [
-    { label: 'DAYS',  value: time.days },
-    { label: 'HRS',   value: time.hours },
-    { label: 'MINS',  value: time.minutes },
-    { label: 'SECS',  value: time.seconds },
+    { label: t.hero.days, value: time.days },
+    { label: t.hero.hrs,  value: time.hours },
+    { label: t.hero.mins, value: time.minutes },
+    { label: t.hero.secs, value: time.seconds },
   ]
 
   return (
