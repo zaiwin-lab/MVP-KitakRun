@@ -253,17 +253,6 @@ function Dashboard({ onLogout }: { onLogout: () => void }) {
               </table>
             </div>
           )}
-
-          <div className="mt-6 text-center">
-            <a
-              href="https://app.netlify.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white/30 hover:text-kitak-lime text-sm transition-colors"
-            >
-              {a.viewNetlify}
-            </a>
-          </div>
         </div>
       </div>
     </main>

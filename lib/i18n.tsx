@@ -177,7 +177,6 @@ const en = {
     colDate: 'Registration Date',
     noResults: 'No registrations found yet.',
     noResultsHint: 'New registrations submitted on this device will appear here automatically.',
-    viewNetlify: 'View live submissions in Netlify Forms ↗',
     backToSite: '← Back to site',
   },
 }
@@ -346,7 +345,6 @@ const bm: Translations = {
     colDate: 'Tarikh Pendaftaran',
     noResults: 'Belum ada pendaftaran lagi.',
     noResultsHint: 'Pendaftaran baharu yang dihantar pada peranti ini akan terpapar di sini secara automatik.',
-    viewNetlify: 'Lihat penyerahan langsung di Netlify Forms ↗',
     backToSite: '← Kembali ke laman web',
   },
 }
@@ -513,7 +511,6 @@ const zh: Translations = {
     colDate: '报名日期',
     noResults: '目前还没有任何报名记录。',
     noResultsHint: '在此设备上提交的新报名将自动显示在此处。',
-    viewNetlify: '在 Netlify Forms 查看实时报名记录 ↗',
     backToSite: '← 返回网站',
   },
 }
@@ -682,7 +679,6 @@ const iban: Translations = {
     colDate: 'Hari Daftar',
     noResults: 'Apin bisi pendaftaran.',
     noResultsHint: 'Pendaftaran baru ti dikirim ari peranti tu deka pansik datai dia tu secara automatik.',
-    viewNetlify: 'Peda pendaftaran live di Netlify Forms ↗',
     backToSite: '← Pulai ngagai laman web',
   },
 }
